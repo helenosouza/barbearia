@@ -1,7 +1,5 @@
 package com.projeto.barbearia.resources;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,10 +27,12 @@ public class AgendamentoResouce {
 		return ResponseEntity.ok().body(new AgendamentoDTO(obj));
 	}
 	
-	ResponseEntity<List<AgendamentoDTO>> findAll(){
+	@GetMapping
+	public ResponseEntity<List<AgendamentoDTO>> findAll(){
 		List<Agendamento> list = service.finAll();
-		List<AgendamentoDTO> listDTO = list.stream().map(obj -> new AgendamentoDTO(obj)).collect(Collectors.toList()));
-		return ResponseEntity.ok().body(listDTO);
+		List<AgendamentoDTO> lisDTO = list.stream().map(obj -> new AgendamentoDTO(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(lisDTO);
 	}
+	
 	
 }

@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.projeto.barbearia.domain.Agendamento;
-import com.projeto.barbearia.enums.Status;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +21,7 @@ public class AgendamentoDTO {
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataAgendamento;
-	private Status status;
+	private Integer status;
 	private String observacoes;
 	private Integer barbeiro;
 	private Integer cliente;
@@ -34,7 +33,7 @@ public class AgendamentoDTO {
 		this.id = obj.getId();
 		this.dataAbertura = obj.getDataAbertura();
 		this.dataAgendamento = obj.getDataAgendamento();
-		this.status = obj.getStatus();
+		this.status = obj.getStatus().getCodigo();
 		this.observacoes = obj.getObservacoes();
 		this.barbeiro = obj.getBarbeiro().getId();
 		this.cliente = obj.getCliente().getId();
