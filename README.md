@@ -46,8 +46,8 @@ API Rest usando Java com Spring Boot e banco de dados MySQL. JPA com Hibernate p
         │      │----ClienteResource.java
         │      │
         │      └----exceptions
-        │              |=====FieldMessage.java
-        │              |=====ResourceExceptionHandle.java
+        │              |-----FieldMessage.java
+        │              |-----ResourceExceptionHandle.java
         │              |-----StandardError.java
         │              |-----ValidationError.java
         │
